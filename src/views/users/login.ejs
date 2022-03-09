@@ -1,0 +1,38 @@
+<%- include('../z_partials/_header'); %>
+
+
+  <div class="mainDiv">
+
+
+    <div class="form-area">
+      <h4>- Please Sign In : <span id="errorMessages">
+          <%- include('../z_partials/_messages'); %>
+        </span></h4>
+      <div class="form-inputs">
+        <div id="login-form">
+          <form action="/login" method="POST">
+            <div>
+              <label for="email">Email :
+              </label>
+              <input type="email" name="email" placeholder="Your email here..." class="form-control" autofocus>
+            </div>
+            <div>
+              <label for="password">Password :</label>
+              <input type="password" name="password" placeholder="Your password here...">
+            </div>
+            <button type="submit" id="addNewData">Sign in</button>
+          </form>
+        </div>
+      </div>
+      <div class="form-inputs createAccount">
+        <h4>- Please create an account if you're not registered. </h4>
+        <div class="loginBtn"><a href="/register"><img src="../images/register.png" class="navBarIcon"></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <%- include('../z_partials/_footer'); %>

@@ -1,0 +1,124 @@
+/* ------------ BUTTONS ------------ */
+
+.button {
+  background-color: transparent;
+  opacity: 0.7;
+  border-radius: 15px;
+  border: 7px solid var(--borderColorLight);
+  width: 2.8em;
+  height: 2.8em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 3px;
+}
+
+.editBtn {
+  border: 3px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: var(--textColorLight);
+  text-decoration: none;
+  word-break: keep-all;
+  padding: 0.2em;
+  margin: 3px;
+  margin-left: 10px;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+#editUpdate {
+  background-color: var(--bgColorUpdate);
+  
+ }
+ #editDelete {
+  background-color: var(--bgColorDelete);
+  font-size: 0.8em;
+ } 
+
+ a {
+  text-decoration: none;
+  }
+  a:active {
+  text-decoration: none;
+  }
+
+
+ #backBtn {
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 10px;
+  border: 5px solid black;
+  z-index: 9999;  
+  width: 5em;
+  height: 1.8em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  display: flex;
+  padding: 2px;
+  font-size: 1em;
+  font-weight: bold;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+#addNewData {
+  border: 5px solid var(--addNewDataBtn);
+  border-radius: 10px;
+  margin: 1.5vh;
+  margin-left: 15%;
+  font-size: 0.8em;
+  padding: 0.4em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+#saveChanges {
+  border: 9px solid white;
+  background-color: var(--addNewDataBtn);;
+  border-radius: 10px;
+  min-width: 30%;
+  margin: 1em;
+  margin-left: 35%;
+  margin-right: 10%;
+  padding: 0.6em;
+  font-size: 70%;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+.swapLoginRegister {
+  display: grid; 
+  grid-template-columns: 3fr 1.5fr;
+  padding: 0;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 15px;
+}
+
+.welcomeBtn {
+  width: 5em;
+  height: 5em;  
+  border: 0.5em solid var(--borderColorLight);
+  background-color: var(--bgColorInputs);
+  margin: 0.3em;
+}
+
+.loginBtn {
+  background-color: var(--bgColorInputs);
+  background-color: var(-bgColorWhite);
+  border: 0.3em solid var(--borderColor1);
+  border-radius: 10px;   
+  opacity: 0.7;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4%;
+  padding: 1%;
+}

@@ -1,0 +1,65 @@
+<%- include('../z_partials/_header'); %>
+
+  <div class="mainDiv">
+    <h2 id="helloUser"><span>
+        <%= user.userName %>
+      </span>, this is your to-do list :
+    </h2>
+
+    <div class="listPage">
+      <table>
+        <tbody>
+
+          <% if (taskList) { %>
+            <% for(let i=0; i < taskList.length; i++) { %>
+
+              <tr>
+                <td>
+                  <div class="landData">
+                    <div class="dataOutput">
+                      <label>task name :</label>
+                      <%= taskList[i].taskName %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>description :</label>
+                      <%= taskList[i].taskDescription%>
+                    </div>
+                    <div class="dataOutput">
+                      <label>starting date :</label>
+                      <%= taskList[i].initDate %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>ending date :</label>
+                      <%= taskList[i].endDate %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>Task Id :</label>
+
+                      <%= taskList[i]._id%>
+                    </div>
+                  </div>
+                </td>
+
+
+                <td class="manageInfo">
+                  <button class="editBtn" id="editUpdate"> <a href="/editTask/update/<%= taskList[i]._id %>">Edit
+                      &#10000;</a>
+                  </button>
+                  <button class="editBtn" id="editDelete"> <a href="/deleteTask/<%= taskList[i]._id %>">Delete
+                    </a>
+                  </button>
+                </td>
+              </tr>
+              <% } %>
+                <% } %>
+
+        </tbody>
+      </table>
+      <button id="addNewData"><a href="/newTask">Add New Task</a></button>
+    </div>
+  </div>
+
+
+
+
+  <%- include('../z_partials/_footer'); %>

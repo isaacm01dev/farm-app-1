@@ -1,0 +1,113 @@
+<%- include('../z_partials/_header'); %>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+
+  <div class="mainDiv">
+    <h2 id="helloUser">
+      Hey <span>
+        <%= user.userName %>
+      </span>!! You can insert new land plots here :
+    </h2>
+
+
+    <%- include('../z_partials/_landMap'); %>
+
+      <div class="form-area edit-area">
+        <div class="form-inputs">
+
+          <form action="/newLand" method="POST">
+            <div>
+              <input type="text" name="plotName" placeholder="Name of the Plot" autofocus>
+            </div>
+            <div>
+              <input type="number" name="plotSurface" placeholder="Indicate surface">
+            </div>
+            <div>
+              <input type="text" name="irrigation" placeholder="Describe type of irrigation">
+            </div>
+            <div>
+              <input type="text" name="irrigation2" placeholder="Describe type of irrigation">
+            </div>
+            <div>
+              <input type="text" name="crops" placeholder="Use of this plot, crops, etc...">
+            </div>
+            <div>
+              <input type="text" name="production" placeholder="Production and units">
+            </div>
+            <div>
+              <input type="text" name="latitude" id="latitudeOutput"
+                placeholder="Please use the map to get coordinates..">
+            </div>
+            <div>
+              <input type="text" name="longitude" id="longitudeOutput"
+                placeholder="Please use the map to get coordinates..">
+            </div>
+
+            <button type="submit" id="saveChanges">
+              Save Land Plot
+            </button>
+          </form>
+        </div>
+      </div>
+  </div>
+
+  <script>
+
+    // ORIGIN MAP COORDINATES :
+
+    const originLat = 42.31676365888337; //CORSE FR by now
+    const originLon = 9.15619410186925;
+    const map = L.map('map').setView([originLat, originLon], 3);
+
+    // DOM ELEMENTS : 
+    const latOut = document.getElementById('latitudeOutput');
+    const lngOut = document.getElementById('longitudeOutput');
+
+    // MAP TILE :
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+
+    // ICONS FOR MARKERS : 
+    const originIcon = L.icon({
+      iconUrl: '/images/wheat.png',
+      iconSize: [40, 40]
+    });
+
+    const cowIcon = L.icon({
+      iconUrl: '/images/find.png',
+      iconSize: [50, 50]
+    });
+
+    // MARKERS ON THE MAP :
+
+    // ORIGIN MARKER STARTING SPOT : 
+
+    const originMarker = L.marker([originLat, originLon], { icon: originIcon }, 10, { draggable: true, clickable: true }).addTo(map);
+    originMarker.bindPopup('You are here');
+
+    // FUNCTION CHOOSE LOCATION : 
+
+    let userMarker;
+
+    map.on('click', function (e) {
+      if (userMarker) {
+        map.removeLayer(userMarker);
+      }
+      userMarker = new L.Marker([e.latlng.lat, e.latlng.lng], { icon: cowIcon }, { draggable: true }).addTo(map);
+      latOut.value = e.latlng.lat;
+      lngOut.value = e.latlng.lng;
+    });
+
+  </script>
+
+
+  <%- include('../z_partials/_footer'); %>

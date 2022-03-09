@@ -1,0 +1,120 @@
+/* ---------- SHOW DATA OUTPUTS -------- */
+.listPage {
+  background-color: var(--bgColorLight);
+  opacity: 0.8;
+  max-width: 75%;
+  min-width: 35%;
+  border-radius: 15px;
+  padding: 2%;
+  
+} 
+
+table {
+  display: grid;
+  grid-template-columns: 7fr, 1fr  ;
+  background-color: var(--bgColorInputs);
+  background-color: var(--bgColorInputs1); /* THIS ONE OK TOO*/
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px var(--boxShadowLight);
+  margin: 1em;
+  margin-left: 0.7em;
+  padding: 1.5%; 
+  font-size: 1em;
+  word-break: break-all;
+  color: var(--textColorDark);
+}
+
+.landData {
+  width: 90%;
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5%;
+  margin: 10px;
+
+}
+
+.dataOutput {
+  background-color: var(--bgColorInputs);
+  opacity: 0.9;
+  color: var(--textColorOutput1);
+  max-width: 90%;
+  max-height: 10%;
+  margin: 2% 5% 3% 5%;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 0.8em;
+  box-shadow: 5px 5px 5px var(--boxShadowDark);
+
+}
+
+.info {
+  color: var(--textColorDark);
+  font-size: 1em;
+  margin-left: 2vw;
+  padding: 1em;
+}
+  
+
+.dataOutput label{
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--errorsMsg1);
+
+}
+
+.weatherData {
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  max-width: 60%;
+  height: 95%;
+  padding: 2%;
+  margin: 5% 1% 5% 1%;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+}
+
+.weatherOutput {
+  background-color: var(--bgColorInputs);
+  margin: 2% 4% 2% 5%;
+  padding: 2% 4% 2% 5%;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--textColorDark);
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+}
+
+.weatherOutput span {
+  font-weight: bold;
+}
+
+#skyDescriptionIcon {
+  background-color: var(--bgColorLight);
+  border: 3px solid var(--borderColor2);
+  justify-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#skyDescriptionIcon img{
+  margin-left: 15%;
+}
+
+
+.meters {
+  text-transform: none;
+}
+
+
+.manageInfo {
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+
+}

@@ -1,0 +1,51 @@
+<%- include('../z_partials/_header'); %>
+  <%- include('../z_partials/_messages'); %>
+
+
+    <div class="mainDiv">
+
+      <h2 id="helloUser">
+        Welcome to your <span>farm app
+          <%= user.userName %>
+        </span> !!
+      </h2>
+      <br>
+      <div class="form-area cpanel">
+        <h3> Hey <%= user.email %>
+            <span>
+
+            </span>, you can update your profile here:
+        </h3>
+        <div class="form-inputs">
+          <div>
+            <form action="/updateProfile/<%= user._id %>" method="POST">
+              <div>
+                <label for="userName">Update your User Name :</label>
+                <input type="text" id="userName" name="userName" value="<%= user.userName%>" autofocus>
+              </div>
+              <div>
+                <label for="email">Update your email :</label>
+                <input type="email" id="email" name="email" value="<%= user.email%>">
+              </div>
+              <div>
+                <label for="address">Update the name of your village, town or city :</label>
+                <input type="text" id="address" name="address" value="<%= user.address%>">
+              </div>
+              <div>
+                <label for="userSector">Update your sector of work :</label>
+                <input type="text" id="userSector" name="userSector" value="<%= user.userSector%>">
+              </div>
+              <div>
+
+                <button type="submit" id="saveChanges">Update Your Profile</button>
+            </form>
+          </div>
+          <br>
+
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+    <%- include('../z_partials/_footer'); %>

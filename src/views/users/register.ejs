@@ -1,0 +1,47 @@
+<%- include('../z_partials/_header'); %>
+
+  <div class="mainDiv">
+    <div id="errorMessages">
+      <%- include('../z_partials/_messages'); %>
+
+        <% if ( !signupMessage ) {%>
+
+          <div>
+            <%= signupMessage %>
+          </div>
+          <% }%>
+    </div>
+
+    <div class="form-area">
+      <h4>&#128393; - Create an account : </h4>
+
+      <div class="form-inputs">
+        <div>
+          <form action="/register" method="POST">
+            <div>
+              <input type="text" id="userName" name="userName" placeholder="Your User Name here..." autofocus>
+            </div>
+            <div>
+              <input type="email" id="email" name="email" placeholder="Email here...">
+            </div>
+            <div>
+              <input type="text" id="address" name="address" placeholder="Village, town or city name...">
+            </div>
+            <div>
+              <input type="text" id="userSector" name="userSector"
+                placeholder="Specify Agricultural Subsector and/or Industry Group...">
+            </div>
+            <div>
+              <input type="password" id="password" name="password" placeholder="Password here...">
+            </div>
+            <div>
+              <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password...">
+            </div>
+            <button type="submit" id="addNewData">Register</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../z_partials/_footer'); %>

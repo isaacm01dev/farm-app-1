@@ -1,0 +1,77 @@
+<%- include('../z_partials/_header'); %>
+
+  <div class="mainDiv">
+    <h2 id="helloUser">Here's your land plots list <span>
+        <%= user.userName %>
+      </span>:
+    </h2>
+
+
+    <div class="listPage">
+      <table>
+        <tbody>
+
+          <% if (landList) { %>
+            <% for(let i=0; i < landList.length; i++) { %>
+
+              <tr>
+                <td>
+                  <div class="landData">
+                    <div class="dataOutput">
+                      <label>plot name :</label>
+                      <%= landList[i].plotName %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>plot surface :</label>
+                      <%= landList[i].plotSurface%>
+                    </div>
+                    <div class="dataOutput">
+                      <label>irrigation :</label>
+                      <%= landList[i].irrigation %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>crops :</label>
+                      <%= landList[i].crops %>
+                    </div>
+                    <div class="dataOutput">
+                      <label>production :</label>
+                      <%= landList[i].production%>
+                    </div>
+                    <div class="dataOutput">
+                      <p>Coordinates :</p>
+                      <label>latitude :</label>
+                      <%= landList[i].latitude%>
+                        <br>
+                        <label>longitude :</label>
+                        <%= landList[i].longitude%>
+                    </div>
+                    <div class="dataOutput">
+
+                      <label>Plot ID :</label>
+
+                      <%= landList[i]._id%>
+                    </div>
+                  </div>
+                </td>
+
+
+                <td class="manageInfo">
+                  <button class="editBtn" id="editUpdate"> <a href="/editLand/update/<%= landList[i]._id %>">Edit
+
+                      &#10000;
+                    </a></button>
+                  <button class="editBtn" id="editDelete"> <a href="/deleteLand/<%= landList[i]._id %>">Delete
+                    </a></button>
+                </td>
+              </tr>
+              <% } %>
+                <% } %>
+        </tbody>
+      </table>
+
+      <button id="addNewData"><a href="/newLand">Add New Land</a></button>
+    </div>
+  </div>
+
+
+  <%- include('../z_partials/_footer'); %>

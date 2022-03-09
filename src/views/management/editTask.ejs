@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin="" />
+
+<!-- ONLY ONE CSS FILE FOR BETTER PERFORMANCE   -->
+<link rel="stylesheet" href="/css/styles.css">
+
+<!-- I KEEP THE FILES SO IT'S EASIER FOR FIXING BUGS  -->
+
+<!-- <link rel="stylesheet" href="/css/showData.css"> -->
+<!-- <link rel="stylesheet" href="/css/editData.css"> -->
+<!-- <link rel="stylesheet" href="/css/messages.css"> -->
+<!-- <link rel="stylesheet" href="/css/buttons.css"> -->
+
+
+
+
+<div>
+  <a href="/listTasks"><button id="backBtn"> &#10094; Back</button></a>
+</div>
+
+<div class="mainDiv">
+
+  <div class="form-area edit-area">
+    <h3>
+      &#128393; EDIT YOUR TASK :</h3>
+    <div class="form-inputs">
+
+      <form action="/updateTask/<%= userTask._id %>" method="POST">
+        <div>
+          <input type="text" name="taskName" value="<%= userTask.taskName%>" autofocus class="editInput">
+        </div>
+        <div>
+          <input type="text" name="taskDescription" value=" <%=userTask.taskDescription%>" class="editInput">
+        </div>
+        <div>
+          <input type="date" initDate" value="<%= userTask.initDate%>" class="editInput">
+        </div>
+        <div>
+          <input type="date" endDate" value="<%= userTask.endDate%>" class="editInput">
+        </div>
+
+
+        <button type="submit" id="saveChanges">
+          SAVE CHANGES;.
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
+  <a href="/listTasks"><button id="backBtn"> &#10094; Back</button></a>
+</div>

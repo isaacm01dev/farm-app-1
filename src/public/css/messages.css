@@ -1,0 +1,48 @@
+/* ---------MESSAGES ----------- */
+
+.welcomeMsg {
+  margin-left: 10vw;
+  max-width: 60%;
+  padding: 0;
+}
+
+#helloUser {
+  margin-top: 15vh;
+  margin-left: 2vw;
+  font-weight: bold;
+  color: var(--helloUserMsgDark);
+  padding-top: 2%;
+  padding-bottom: 0;
+  word-break: keep-all;
+}
+
+#helloUser span {
+  text-transform: capitalize; 
+
+}
+
+.welcomeDiv {
+  display: grid; 
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 3fr 0.5fr;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  max-width: 50%;
+  margin-left: 10vw;
+  margin-top: 2vh;
+}
+
+.welcomeMsg {
+  margin-top: 5vh;
+  margin-left: -3vw;
+  font-size: 1.3em;
+}
+
+#errorMessages {
+  margin-top: 0;
+  color: var(--errorMsg1);
+  font-size: 0.7em;
+}
+  

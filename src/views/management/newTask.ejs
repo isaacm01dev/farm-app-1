@@ -1,0 +1,37 @@
+<%- include('../z_partials/_header'); %>
+
+  <div class="mainDiv">
+
+    <h2 id="helloUser">
+      Hey <span>
+        <%= user.userName %>
+      </span>, you can insert new tasks here :
+    </h2>
+    <div class="form-area edit-area">
+      <div class="form-inputs">
+
+        <form action="/newTask" method="POST">
+          <div>
+            <input type="text" name="taskName" placeholder="Name the task somehow" autofocus>
+          </div>
+          <div>
+            <input type="textarea" name="taskDescription" placeholder="Describe this task...">
+          </div>
+          <div>
+            <input type="date" name="initDate">
+          </div>
+          <div>
+            <input type="date" name="endDate">
+          </div>
+
+          <button type="submit" id="saveChanges">
+            Save New Task
+          </button>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+
+  <%- include('../z_partials/_footer'); %>

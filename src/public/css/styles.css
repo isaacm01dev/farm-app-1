@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Assistant:wght@300&family=Barlow:wght@100&family=Lato:wght@300&family=Montserrat:wght@300&family=Mulish:ital,wght@1,200&family=Nunito:wght@200&display=swap');
+
+/* * { */
+  /* /* margin: 0; 
+  /* padding: 0; */ 
+  /* box-sizing: border-box; */
+/* } */
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    /* BACKGROUNDS */
+  --bgColorLight: white;
+  --bgColorDelete: rgb(248, 34, 44);
+  --bgColorInputs: rgb(252, 239, 204);
+  --bgColorInputs1: rgba(253, 194, 31, 0.678);
+  --addNewDataBtn: rgb(204, 153, 14);
+  --bgColorUpdate: rgb(250, 174, 9);
+
+    /* TEXT */
+  --textColorDark: rgb(0, 0, 0);
+  --textColorLight: white;
+  --textColorOutput1: blue;
+
+   /* MESSAGES */
+  --helloUserMsgDark: black;
+  --errorMsg1: Red;
+
+   /* BORDERS : */
+  --borderColorLight: white;
+  --borderColor1: rgba(206, 153, 22, 1);
+  --borderColor2: rgb(204, 153, 14);
+
+    /* SHADOWS :  */
+  --boxShadowLight: rgba(0, 0, 0, 0.331);
+  --boxShadowDark: rgba(0, 0, 0, 0.431);
+
+}
+
+body {
+  margin-left: 2.5%;
+  background-image: url("/images/fieldsbg4.jpg"); 
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  font-family: 'Assistant', sans-serif;
+  font-family: 'Mulish', sans-serif;
+  font-family: 'Barlow', sans-serif; */
+  font-family: 'Architects Daughter', cursive;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------------------- */
+
+/* ----- COMMON ELEMENTS --------- */
+.navBarIcon {
+  width: 1.8em;
+  height: 1.8em;
+  z-index: 9999;
+}
+
+.welcomeIcon {
+  width: 3.2em;
+  height: 3.2em;
+  z-index: 9999;
+}
+
+#topNavBar {
+  position: fixed;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-radius: 15px;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding: 0;
+  top: 2%;
+  margin-left: 5vw;
+  margin-right: 1vw;
+  z-index: 9999;
+}
+
+form label {
+  font-size: 0.8em;
+}
+/* ------------------------------------- */
+
+/* ------------- TITLES --------------- */
+
+h1 {
+  margin-top: 10vh;
+  margin-left: 2px;
+  word-break: keep-all;
+}
+
+h2 {
+  color: white;
+  font-weight: bold;
+  margin-left: 5%;
+  word-break: keep-all;
+}
+
+.editTitle {
+  margin: 2% 5% 1% 5%;
+  color: var(--textColorDark);
+  font-size: 1em;
+}
+
+h2 h3, span{
+    text-transform: capitalize;
+}
+
+h3 {
+  color: var(--textColorDark);
+  font-weight: bold;
+  padding: 0;
+  margin: 10px;
+  margin-left: 3vw;
+  font-size: 0.95em;
+}
+
+h4 {
+  color: var(--textColorDark);
+  font-weight: bold;
+  padding: 0;
+  margin: 10px;
+  margin-left: 3vw;
+  font-size: 0.9em;
+}
+/* ------------------------------------- */
+
+/* ------------- MAIN DIVS --------------- */
+
+#homepageDiv {
+  padding: 0;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  border-radius: 15px;
+  margin-left: -3vw;
+  margin-top: 3vh;
+  max-width: 100%;
+}
+#footerDiv1 {
+  display: grid;
+  grid-template-columns: 0.3fr 3fr;
+  grid-template-rows: 1fr 0.5fr;
+  margin: 15vh 5vw -1vh 3vw ;
+}
+
+#footerDiv2 {
+  margin: 10vh 5vw 2vh 3vw ;
+}
+
+#footerImg {
+  width: 5em;
+  height: 5em;
+  margin-left: 2vw;
+  margin-top: 3vh;
+  padding: 0;
+}
+
+.mainDiv {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin-left: 1%;
+  margin-top: 3vh;
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+/* ------------------------------------- */
+
+/* ------------ BUTTONS ------------ */
+
+.button {
+  background-color: transparent;
+  opacity: 0.7;
+  border-radius: 15px;
+  border: 7px solid var(--borderColorLight);
+  width: 2.8em;
+  height: 2.8em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 3px;
+}
+
+.editBtn {
+  border: 3px solid var(--borderColorLight);
+  border-radius: 5px;
+  font-size: 0.7em;
+  font-weight: bold;
+  color: var(--textColorLight);
+  text-decoration: none;
+  word-break: keep-all;
+  padding: 0.2em;
+  margin: 3px;
+  margin-left: 10px;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+#editUpdate {
+  background-color: var(--bgColorUpdate);
+  
+ }
+ #editDelete {
+  background-color: var(--bgColorDelete);
+  font-size: 0.8em;
+ } 
+
+ a {
+  text-decoration: none;
+  }
+  a:active {
+  text-decoration: none;
+  }
+
+ #backBtn {
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 10px;
+  border: 5px solid black;
+  z-index: 9999;  
+  width: 5em;
+  height: 1.8em;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  display: flex;
+  padding: 2px;
+  font-size: 1em;
+  font-weight: bold;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+#addNewData {
+  border: 5px solid var(--addNewDataBtn);
+  border-radius: 10px;
+  margin: 1.5vh;
+  margin-left: 15%;
+  font-size: 0.8em;
+  padding: 0.4em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+#saveChanges {
+  border: 9px solid white;
+  background-color: var(--addNewDataBtn);;
+  border-radius: 10px;
+  min-width: 30%;
+  margin: 1em;
+  margin-left: 35%;
+  margin-right: 10%;
+  padding: 0.6em;
+  font-size: 70%;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 5px 5px 3px var(--boxShadowDark);
+}
+
+.swapLoginRegister {
+  display: grid; 
+  grid-template-columns: 3fr 1.5fr;
+  padding: 0;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 15px;
+}
+
+.welcomeBtn {
+  width: 5em;
+  height: 5em;  
+  border: 0.5em solid var(--borderColorLight);
+  background-color: var(--bgColorInputs);
+  margin: 0.3em;
+}
+
+.loginBtn {
+  background-color: var(--bgColorInputs);
+  background-color: var(-bgColorWhite);
+  border: 0.3em solid var(--borderColor1);
+  border-radius: 10px;   
+  opacity: 0.7;
+  display: flex;
+  width: 2em;
+  height: 2em;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  margin-right: 4%;
+  padding: 1%;
+}
+
+/* ------------------------------------- */
+
+/* ---------MESSAGES ----------- */
+
+.welcomeMsg {
+  margin-left: 10vw;
+  max-width: 60%;
+  padding: 0;
+}
+
+#helloUser {
+  margin-top: 15vh;
+  margin-left: 2vw;
+  font-weight: bold;
+  color: var(--helloUserMsgDark);
+  padding-top: 2%;
+  padding-bottom: 0;
+  word-break: keep-all;
+}
+
+#helloUser span {
+  text-transform: capitalize; 
+
+}
+
+.welcomeDiv {
+  display: grid; 
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-rows: 3fr 0.5fr;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  max-width: 50%;
+  margin-left: 10vw;
+  margin-top: 2vh;
+}
+
+.welcomeMsg {
+  margin-top: 5vh;
+  margin-left: -3vw;
+  font-size: 1.3em;
+}
+
+#errorMessages {
+  margin-top: 0;
+  color: var(--errorMsg1);
+  font-size: 0.7em;
+}
+  
+/* ------------------------------------- */
+
+/* ---------- INPUT DATA FORMS --------- */
+
+.form-area {
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  padding: 1em 0.8em 0.5em 1em;
+  border-radius: 15px;
+  justify-items: center;
+  align-items: center;
+  max-width: 60%;
+  min-width: 50%;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: 15vh;
+}
+
+.edit-area {
+  margin-top: 5vh;
+}
+
+.cpanel {
+  margin-top: 2vh;
+}
+
+.form-inputs {
+  background-color: var(--bgColorInputs);
+  border-radius: 15px;
+  padding: 1em;
+  border-radius: 15px;
+  justify-items: center;
+  align-items: center;
+  margin-left: 0.6em;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  box-shadow: 10px 10px 3px var(--boxShadowDark);
+
+}
+
+.form-inputs label{
+  margin-left: 5vw;
+  color: var(--textColorDark);
+  padding: 0.5em;
+}
+
+.createAccount {
+  display: flex;
+}
+
+input {
+  background-color: var(--bgColorLight);
+  width: 80%;
+  margin: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.5em;
+  border: 1px solid var(--addNewDataBtn);
+  border-radius: 5px;
+  height: 3vh;
+  font-size: 0.7em;
+}
+
+.editInput {
+  color: var(--textColorDark);
+  padding: 1em;
+  height: 4vh;
+}
+
+#map {
+  width: 95%;
+  height: 80%;
+  min-height:400px;
+  margin: 3% 1% 5% 2%;
+  border: 3px solid var(--addNewDataBtn);
+  border-radius: 15px;
+  box-shadow: 8px 8px 3px var(--boxShadowLight);
+  
+}
+
+#mapDiv {
+  background-color: var(--bgColorLight);
+  width: 85%;
+  height: 95%;
+  border-radius: 15px;
+  margin-top: 1%;
+  margin-left: 5%;
+  padding: 1% 4% 3% 3%;
+}
+
+#login-form {
+  max-width: 80%;
+}
+/* ------------------------------------- */
+
+/* ---------- SHOW DATA OUTPUTS -------- */
+
+
+.listPage {
+  background-color: var(--bgColorLight);
+  opacity: 0.8;
+  max-width: 75%;
+  min-width: 35%;
+  border-radius: 15px;
+  padding: 2%;
+  
+} 
+
+table {
+  display: grid;
+  grid-template-columns: 7fr, 1fr  ;
+  background-color: var(--bgColorInputs);
+  background-color: var(--bgColorInputs1); /* THIS ONE OK TOO*/
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px var(--boxShadowLight);
+  margin: 1em;
+  margin-left: 0.7em;
+  padding: 1.5%; 
+  font-size: 1em;
+  word-break: break-all;
+  color: var(--textColorDark);
+}
+
+.landData {
+  width: 90%;
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5%;
+  margin: 10px;
+}
+
+.dataOutput {
+  background-color: var(--bgColorInputs);
+  opacity: 0.9;
+  color: var(--textColorOutput1);
+  max-width: 90%;
+  max-height: 10%;
+  margin: 2% 5% 3% 5%;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 0.8em;
+  box-shadow: 5px 5px 5px var(--boxShadowDark);
+}
+
+.info {
+  color: var(--textColorDark);
+  font-size: 1em;
+  margin-left: 2vw;
+  padding: 1em;
+}
+  
+
+.dataOutput label{
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--errorsMsg1);
+}
+
+.weatherData {
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  max-width: 60%;
+  height: 95%;
+  padding: 2%;
+  margin: 5% 1% 5% 1%;
+  border-radius: 15px;
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+}
+
+.weatherOutput {
+  background-color: var(--bgColorInputs);
+  margin: 2% 4% 2% 5%;
+  padding: 2% 4% 2% 5%;
+  border-radius: 10px;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--textColorDark);
+  box-shadow: 10px 10px 5px var(--boxShadowDark);
+}
+
+.weatherOutput span {
+  font-weight: bold;
+}
+
+#skyDescriptionIcon {
+  background-color: var(--bgColorLight);
+  border: 3px solid var(--borderColor2);
+  justify-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#skyDescriptionIcon img{
+  margin-left: 15%;
+}
+
+
+.meters {
+  text-transform: none;
+}
+
+
+.manageInfo {
+  width: 15%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------------------------------- */
+/* ----------------------------------- */

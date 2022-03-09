@@ -1,0 +1,115 @@
+<%- include('../z_partials/_header'); %>
+
+
+  <div class="mainDiv">
+
+    <!-- SAY HELLO TO USER -->
+    <h2 id="helloUser"><span id="user">
+        <%= user.userName %>
+      </span>, here's the weather forecast for<span>
+
+        <!--  THIS IS USER LOCATION -->
+        <%= user.address%>
+      </span>
+    </h2>
+
+    <!-- OUTPUT WEATHER DATA  -->
+    <div class="weatherData">
+      <div class="weatherOutput" id="skyDescription">
+      </div>
+      <div class="weatherOutput" id="skyDescriptionIcon">
+      </div>
+      <div class="weatherOutput" id="currentTemp">
+      </div>
+      <div class="weatherOutput" id="maxTemp">
+      </div>
+      <div class="weatherOutput" id="minTemp">
+      </div>
+      <div class="weatherOutput" id="feelsLikeTemp">
+      </div>
+      <div class="weatherOutput" id="windSpeed">
+      </div>
+      <div class="weatherOutput" id="humidity">
+      </div>
+      <div class="weatherOutput" id="pressure">
+
+      </div>
+    </div>
+    <br>
+
+  </div>
+
+
+  <script>
+
+    let data;
+
+    const getApi = async function () {
+
+      const userLocation = '<%= user.address%>'; // ESTA ES LA CLAVE!!!! ES UN STRING!!!
+      const myKey = 'dfc4c3e5e60badff5421565cd6827530';
+
+      const weatherApi = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=${myKey}&units=metric `);
+
+      data = await weatherApi.json();
+
+      console.log(`data from API : ${data}`);
+      console.log(data);
+      console.log(`THIS IS USER LOCATION : ${userLocation}`);
+
+      // WEATHER STATUS DEPENDS ON USER PROFILE LOCATION
+
+      // SELECT DOM ELEMENTS TO SHOW WEATHER DATA
+
+      // SKY STATUS :
+      const skyDescription = document.getElementById('skyDescription');
+      const skyDescriptionIcon = document.getElementById('skyDescriptionIcon');
+
+      // TEMPERATURES : 
+      const currentTemp = document.getElementById('currentTemp');
+      const maxTemp = document.getElementById('maxTemp');
+      const minTemp = document.getElementById('minTemp');
+      const feelsLikeTemp = document.getElementById('feelsLikeTemp');
+
+      // WIND: 
+      const windSpeed = document.getElementById('windSpeed');
+      // HUMIDITY :
+      const humidity = document.getElementById('humidity');
+      // PRESSURE : 
+      const pressure = document.getElementById('pressure');
+
+
+      // SHOW WEATHER DATA INSIDE DOM ELEMENTS :
+      skyDescriptionIcon.innerHTML = `<span><img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" </span>`;
+      // SKY STATUS :
+      skyDescription.innerHTML = `<span> The Sky Condition in <%= user.address%> is right now : " ${data.weather[0].description}" :</span>`;
+
+      // TEMPERATURES : 
+      currentTemp.innerHTML = `<span> Current Temperature now : ${data.main.temp} &#x2103;</span>`;
+      maxTemp.innerHTML = `<span> Maximum Temperature : ${data.main.temp_max}  &#x2103;</span>`;
+      minTemp.innerHTML = `<span> Minimum Temperature : ${data.main.temp_min} &#x2103;</span>`;
+      feelsLikeTemp.innerHTML = `<span> Temperature feels like : ${data.main.feels_like} &#x2103;</span>`;
+
+      // WIND: 
+      windSpeed.innerHTML = `<span> Wind Speed : ${data.wind.speed} <span class="meters"> m/s </span></span>`;
+
+      // HUMIDITY:
+      humidity.innerHTML = `<span> Humidity : ${data.main.humidity} %</span>`;
+
+      // PRESSURE : 
+      pressure.innerHTML = `<span> Barometer : ${data.main.pressure} <span class="meters">hPa</span></span>`;
+
+      enterLocationBtn.addEventListener("click", () => {
+        newLocation = newLocation.value;
+      });
+
+      console.log(newLocation.value);
+      return data;
+    }
+
+    getApi();
+
+  </script>
+
+
+  <%- include('../z_partials/_footer'); %>

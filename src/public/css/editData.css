@@ -1,0 +1,91 @@
+/* ---------- INPUT DATA FORMS --------- */
+
+.form-area {
+  background-color: var(--bgColorLight);
+  opacity: 0.9;
+  padding: 1em 0.8em 0.5em 1em;
+  border-radius: 15px;
+  justify-items: center;
+  align-items: center;
+  max-width: 60%;
+  min-width: 50%;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: 15vh;
+}
+
+.edit-area {
+  margin-top: 5vh;
+}
+
+.cpanel {
+  margin-top: 2vh;
+}
+
+.form-inputs {
+  background-color: var(--bgColorInputs);
+  border-radius: 15px;
+  padding: 1em;
+  border-radius: 15px;
+  justify-items: center;
+  align-items: center;
+  margin-left: 0.6em;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+  box-shadow: 10px 10px 3px var(--boxShadowDark);
+
+}
+
+.form-inputs label{
+  margin-left: 5vw;
+  color: var(--textColorDark);
+  padding: 0.5em;
+}
+
+.createAccount {
+  display: flex;
+}
+
+input {
+  background-color: var(--bgColorLight);
+  width: 80%;
+  margin: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.5em;
+  border: 1px solid var(--addNewDataBtn);
+  border-radius: 5px;
+  height: 3vh;
+  font-size: 0.7em;
+}
+
+.editInput {
+  color: var(--textColorDark);
+  padding: 1em;
+  height: 4vh;
+}
+
+#map {
+  width: 95%;
+  height: 80%;
+  min-height:400px;
+  margin: 3% 1% 5% 2%;
+  border: 3px solid var(--addNewDataBtn);
+  border-radius: 15px;
+  box-shadow: 8px 8px 3px var(--boxShadowLight);
+  
+}
+
+#mapDiv {
+  background-color: var(--bgColorLight);
+  width: 85%;
+  height: 95%;
+  border-radius: 15px;
+  margin-top: 1%;
+  margin-left: 5%;
+  padding: 1% 4% 3% 3%;
+}
+
+#login-form {
+  max-width: 80%;
+}

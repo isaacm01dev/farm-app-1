@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin="" />
+
+<!-- ONLY ONE CSS FILE FOR BETTER PERFORMANCE   -->
+<link rel="stylesheet" href="/css/styles.css">
+
+<!-- I KEEP THE FILES SO IT'S EASIER FOR FIXING BUGS  -->
+
+<!-- <link rel="stylesheet" href="/css/showData.css"> -->
+<!-- <link rel="stylesheet" href="/css/editData.css"> -->
+<!-- <link rel="stylesheet" href="/css/messages.css"> -->
+<!-- <link rel="stylesheet" href="/css/buttons.css"> -->
+
+
+<div>
+  <a href="/listLands"><button id="backBtn"> &#10094; Back</button></a>
+</div>
+
+<div class="mainDiv">
+  <h2>Use the map edit your land plot coordinates :</h2>
+
+  <%- include('../z_partials/_landMap'); %>
+
+    <div class="form-area edit-area">
+      <h3>
+
+        &#128393; EDIT YOUR LAND PLOT DATA:</h3>
+      <div class="form-inputs">
+
+
+        <form action="/updateLand/<%= userLand._id %>" method="POST">
+
+          <div>
+            <input type="text" name="plotName" value="<%= userLand.plotName%>" autofocus class="editInput">
+          </div>
+          <div>
+            <input type="number" name="plotSurface" value="<%= userLand.plotSurface%>" class="editInput">
+          </div>
+          <div>
+            <input type="text" name="irrigation" value="<%= userLand.irrigation%>" class="editInput">
+          </div>
+          <div>
+            <input type="text" name="crops" value="<%= userLand.crops%>" class="editInput">
+          </div>
+          <div>
+            <input type="text" name="production" value="<%= userLand.production%>" class="editInput">
+          </div>
+          <!-- *** THEESE VALUES COME FROM THE MAP CLICK EVENT ***-->
+          <h3>Land Plot Coordinates : </h3>
+          <div>
+            <input type="text" name="latitude" id="latitudeOutput" value="<%= userLand.latitude%>" class="editInput">
+          </div>
+          <div>
+            <input type="text" name="longitude" id="longitudeOutput" value="<%= userLand.longitude%>" class="editInput">
+          </div>
+
+          <button type="submit" id="saveChanges">
+            SAVE CHANGES
+          </button>
+        </form>
+      </div>
+    </div>
+    <div>
+      <a href="/listLands"><button id="backBtn"> &#10094; Back</button></a>
+    </div>
+
+</div>
+
+
+
+<script>
+
+  // ORIGIN MAP COORDINATES : 
+  const originLat = 42.31676365888337; //CORSE FR AS DEFAULT VAULE
+  const originLon = 9.15619410186925;
+  const map = L.map('map').setView([originLat, originLon], 3);
+
+  // DOM ELEMENTS : 
+  const latOut = document.getElementById('latitudeOutput');
+  const lngOut = document.getElementById('longitudeOutput');
+
+  // MAP TILE :
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  // ICONS FOR MARKERS : 
+  const originIcon = L.icon({
+    iconUrl: '/images/wheat.png',
+    iconSize: [40, 40]
+  });
+
+  const cowIcon = L.icon({
+    iconUrl: '/images/find.png',
+    iconSize: [50, 50]
+  });
+
+  // MARKERS ON THE MAP :
+
+  // ORIGIN MARKER STARTING SPOT : 
+
+  const originMarker = L.marker([originLat, originLon], { icon: originIcon }, 10, { draggable: true, clickable: true }).addTo(map);
+  originMarker.bindPopup('You are here');
+
+
+  let userMarker;
+
+  // CLICK ON THE MAP TO OBTAIN COORDINATES : 
+  map.on('click', function (e) {
+    if (userMarker) {
+      map.removeLayer(userMarker);
+    }
+    userMarker = new L.Marker([e.latlng.lat, e.latlng.lng], { icon: cowIcon }, { draggable: true }).addTo(map);
+    latOut.value = e.latlng.lat;
+    lngOut.value = e.latlng.lng;
+  });
+
+</script>

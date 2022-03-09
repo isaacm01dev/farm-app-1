@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+
+  <!-- ONLY ONE CSS FILE FOR BETTER PERFORMANCE   -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- I KEEP THE FILES SO IT'S EASIER FOR FIXING BUGS  -->
+
+  <!-- <link rel="stylesheet" href="/css/showData.css"> -->
+  <!-- <link rel="stylesheet" href="/css/editData.css"> -->
+  <!-- <link rel="stylesheet" href="/css/messages.css"> -->
+  <!-- <link rel="stylesheet" href="/css/buttons.css"> -->
+
+
+  <title>Farm Management App</title>
+</head>
+
+
+
+
+<body>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+  <div>
+    <nav id="topNavBar">
+      <div class="button"><span title="Home Page" class="tooltip"><a href="/"><img src="../images/homepage.png"
+              class="navBarIcon"></a></span></div>
+
+      <div class="button"><span title="Lands List"><a href="/listLands"><img src="../images/farm.png"
+              class="navBarIcon"></a></span>
+      </div>
+
+      <div class="button"><span title="To-do List"><a href="/listTasks"><img src="../images/taskslist.png"
+              class="navBarIcon"></a></span>
+      </div>
+
+      <div class="button"><span title="Weather"><a href="/weather"><img src="../images/weather.png"
+              class="navBarIcon"></a></span>
+      </div>
+
+      <div class="button"><span title="LogOut"><a href="/logout"><img src="../images/logout.png"
+              class="navBarIcon"></a></span>
+      </div>
+    </nav>
+  </div>
